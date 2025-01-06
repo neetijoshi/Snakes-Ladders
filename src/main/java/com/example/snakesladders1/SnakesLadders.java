@@ -13,12 +13,11 @@ import java.io.IOException;
 
 public class SnakesLadders extends Application {
     public static final int tileSize=40,width=10,height=10;
-    private static final int buttonLine = 420; // Y position for buttons
-    private static final int infoLine = 470;  // Y position for info labels
+    private static final int buttonLine = height*tileSize+50,infoLine=buttonLine-30; // Y position for buttons
 
     private Pane createContent(){
         Pane root=new Pane();
-        root.setPrefSize(width*tileSize,height*tileSize+150);
+        root.setPrefSize(width*tileSize,height*tileSize+100);
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
                 Tile tile=new Tile(tileSize);
@@ -39,22 +38,22 @@ public class SnakesLadders extends Application {
         Button player2Btn=new Button("Player 2");
         Button startBtn=new Button("Start");
         player1Btn.setTranslateY(buttonLine);
-        player1Btn.setTranslateX(20);
+        player1Btn.setTranslateX(40);
         player2Btn.setTranslateY(buttonLine);
         player2Btn.setTranslateX(300);
         startBtn.setTranslateY(buttonLine);
         startBtn.setTranslateX(180);
         //Info display
-        Label player1Label =new Label("Your Turn1 P1");
+        Label player1Label =new Label("Your Turn P1");
         Label player2Label=new Label("Your Turn P2");
-        Label diceLabel=new Label("Start the Game");
+        Label diceLabel=new Label("Start the Game!");
 
         player1Label.setTranslateY(infoLine);
-        player1Label.setTranslateX(20);
+        player1Label.setTranslateX(35);
         player2Label.setTranslateY(infoLine);
         player2Label.setTranslateX(300);
         diceLabel.setTranslateY(infoLine);
-        diceLabel.setTranslateX(150);
+        diceLabel.setTranslateX(160);
 
         root.getChildren().addAll(
                 player1Btn,player2Btn,startBtn,
